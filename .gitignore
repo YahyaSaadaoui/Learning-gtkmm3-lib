@@ -1,0 +1,38 @@
+# Compiled binaries
+demo1
+demo2
+demo1.exe
+demo2.exe
+
+# Object files
+*.o
+*.obj
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.code-workspace
+
+# Build artifacts
+build/
+dist/
+*.a
+*.so
+*.dylib
+
+# Dependency tracking
+*.d
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

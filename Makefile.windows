@@ -1,0 +1,23 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -O2 `pkg-config --cflags gtkmm-3.0`
+LDFLAGS = `pkg-config --libs gtkmm-3.0` -static-libgcc -static-libstdc++
+
+OBJS = domino.o
+TARGETS = demo1.exe demo2.exe
+
+all: $(TARGETS)
+
+demo1.exe: demo1.cpp
+	$(CXX) $(CXXFLAGS) demo1.cpp -o demo1.exe $(LDFLAGS)
+
+demo2.exe: demo2.cpp $(OBJS)
+	$(CXX) $(CXXFLAGS) demo2.cpp domino.o -o demo2.exe $(LDFLAGS)
+
+domino.o: domino.cpp domino.h
+	$(CXX) $(CXXFLAGS) -c domino.cpp
+
+clean:
+	del $(TARGETS) *.o 2>nul || true
+	rm -f $(TARGETS) *.o
+
+.PHONY: all clean
