@@ -117,4 +117,3 @@ bool Domino::rivet_is_clicked(double clickX, double clickY)
     double distance = sqrt(dx*dx + dy*dy);
     return distance <= RIVET_RADIUS;
 }
-
