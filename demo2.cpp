@@ -17,8 +17,8 @@ public:
 
     int m_mouse_button_num_pressed = 0;
 
-    Domino activeDomino;        // The draggable + rotatable domino
-    bool dominoClicked = false; // True when mouse pressed inside domino
+    Domino activeDomino;        
+    bool dominoClicked = false;
     double lastMouseX = 0;
     double lastMouseY = 0;
 };

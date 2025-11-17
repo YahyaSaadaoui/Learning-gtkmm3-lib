@@ -92,7 +92,7 @@ public:
 
     void repaint_darea()
     {
-        m_darea.queue_draw();   // force darea à se redessiner
+        m_darea.queue_draw();  
     }
 
     void button_quit_on_clicked()
@@ -163,11 +163,11 @@ public:
         // Du texte
         cr->set_font_size (20);
         cr->move_to (40, 60);
-        cr->set_source_rgb (0.82, 0.41, 0.12); // on donne la couleur avant
+        cr->set_source_rgb (0.82, 0.41, 0.12); 
         cr->show_text ("Quelques dessins :");
         cr->stroke();
 
-        return true;  // événement capté
+        return true;  
     }
 
     bool darea_on_button_press (GdkEventButton *event)
@@ -175,9 +175,9 @@ public:
         std::cout << __func__ << " " << event->button << " " <<
             event->x << " " << event->y << std::endl;
 
-        m_darea.grab_focus();  // prend le focus clavier chaque fois qu'on clique
-        m_my->m_mouse_button_num_pressed = event->button;  // bouton pressé
-        return true;  // événement capté
+        m_darea.grab_focus(); 
+        m_my->m_mouse_button_num_pressed = event->button; 
+        return true; 
     }
 
     bool darea_on_button_release (GdkEventButton *event)
@@ -185,8 +185,8 @@ public:
         std::cout << __func__ << " " << event->button << " " <<
             event->x << " " << event->y << std::endl;
 
-        m_my->m_mouse_button_num_pressed = 0;  // bouton relaché
-        return true;  // événement capté
+        m_my->m_mouse_button_num_pressed = 0;  
+        return true;  
     }
 
     bool darea_on_motion_notify (GdkEventMotion *event)
@@ -195,7 +195,7 @@ public:
             std::cout << __func__ << " " << 
                 event->x << " " << event->y << std::endl;
 
-        return true;  // événement capté
+        return true;  
     }
 
     bool darea_on_scroll (GdkEventScroll *event)
@@ -203,7 +203,7 @@ public:
         std::cout << __func__ << " " << event->direction << " " <<
             event->x << " " << event->y << std::endl;
 
-        return true;  // événement capté
+        return true;  
     }
 
     void darea_on_size_allocate (Gtk::Allocation& allocation)
@@ -227,16 +227,16 @@ public:
             default : std::cout << "Touche pressée : GDK_KEY_" << 
                 gdk_keyval_name(event->keyval) << std::endl;
         }
-        return true;  // événement capté
+        return true;  
     }
 
-};  // MainWindow
+};  
 
 //--------------------------------- M A I N -----------------------------------
 
 int main (int argc, char** argv)
 {
-    // Initialise GTK et enlève de argc,argv les options reconnues
+
     Gtk::Main app (argc, argv);
 
     MyData my;
